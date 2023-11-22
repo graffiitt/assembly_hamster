@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="assembly_hamster">
+  <link
+    name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="1_Link">
+    <inertial>
+      <origin
+        xyz="0.01351 0.037179 -0.003383"
+        rpy="0 0 0" />
+      <mass
+        value="2.6545" />
+      <inertia
+        ixx="0.0023682"
+        ixy="8.0753E-05"
+        ixz="1.7978E-05"
+        iyy="0.0032175"
+        iyz="4.8925E-05"
+        izz="0.0021073" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0202"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="1_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="2_1_Link">
+    <inertial>
+      <origin
+        xyz="-0.079036 -0.016436 -1.1424E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.55117" />
+      <inertia
+        ixx="7.293E-05"
+        ixy="4.1886E-08"
+        ixz="1.1981E-07"
+        iyy="0.00070853"
+        iyz="4.1934E-08"
+        izz="0.00068782" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2_1"
+    type="continuous">
+    <origin
+      xyz="-0.0285 0.055 0"
+      rpy="1.5708 0 -1.3472" />
+    <parent
+      link="1_Link" />
+    <child
+      link="2_1_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="3_Link">
+    <inertial>
+      <origin
+        xyz="-0.0704447246010788 0.343494150571024 -0.03888635607788"
+        rpy="0 0 0" />
+      <mass
+        value="0.240854595463992" />
+      <inertia
+        ixx="5.70384323950151E-05"
+        ixy="2.03886631821913E-05"
+        ixz="-3.0839576044844E-08"
+        iyy="0.000450948009144471"
+        iyz="4.17435822214057E-09"
+        izz="0.000492580105984167" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3_base"
+    type="fixed">
+    <origin
+      xyz="0.077076 0 0.024656"
+      rpy="-1.5708 1.3472 0" />
+    <parent
+      link="2_1_Link" />
+    <child
+      link="3_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="3_1_Link">
+    <inertial>
+      <origin
+        xyz="0.0225113352518309 0.0816101189194423 0.0111429600420675"
+        rpy="0 0 0" />
+      <mass
+        value="0.706946980905885" />
+      <inertia
+        ixx="0.00157450700015675"
+        ixy="3.60972844158452E-11"
+        ixz="1.93929692550891E-06"
+        iyy="0.000107129521994653"
+        iyz="-7.73897691995558E-12"
+        izz="0.00157126380530245" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/3_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/3_1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3_1"
+    type="continuous">
+    <origin
+      xyz="-0.048498 0.3244 0"
+      rpy="0 0 2.1095" />
+    <parent
+      link="3_Link" />
+    <child
+      link="3_1_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="last_Link">
+    <inertial>
+      <origin
+        xyz="0.00458290320651195 0.00403833478304899 -0.0619326448877698"
+        rpy="0 0 0" />
+      <mass
+        value="1.25124090194283" />
+      <inertia
+        ixx="0.000910187410735932"
+        ixy="-8.26464406621072E-05"
+        ixz="-0.000139433164917929"
+        iyy="0.00114548708038895"
+        iyz="-8.56917911613583E-05"
+        izz="0.000580086863956969" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/last_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/last_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_last"
+    type="fixed">
+    <origin
+      xyz="0 0.25 -0.0005"
+      rpy="2.1095 -1.5708 0" />
+    <parent
+      link="3_1_Link" />
+    <child
+      link="last_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="end_Link">
+    <inertial>
+      <origin
+        xyz="5.86233622760363E-06 -0.000606087650654452 0.0417223441506261"
+        rpy="0 0 0" />
+      <mass
+        value="0.442243456619388" />
+      <inertia
+        ixx="8.43721038666399E-05"
+        ixy="2.09810431459494E-07"
+        ixz="-2.31972138398739E-07"
+        iyy="8.65761187754296E-05"
+        iyz="2.91645480078844E-06"
+        izz="7.21955526660134E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/end_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/end_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_end_effector"
+    type="continuous">
+    <origin
+      xyz="0 0.032 -0.045"
+      rpy="1.5708 0.021754 3.1416" />
+    <parent
+      link="last_Link" />
+    <child
+      link="end_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="3_2_Link">
+    <inertial>
+      <origin
+        xyz="0.0125186312495149 -0.110087387781772 -0.0592095182502816"
+        rpy="0 0 0" />
+      <mass
+        value="0.0914145398110059" />
+      <inertia
+        ixx="0.00028423216892371"
+        ixy="-3.20404228246573E-22"
+        ixz="1.68681133605372E-22"
+        iyy="6.52175629641466E-05"
+        iyz="-0.000117144678218105"
+        izz="0.000220017724009756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/3_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/3_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3_2"
+    type="continuous">
+    <origin
+      xyz="-0.14389 0.3544 -0.0385"
+      rpy="0.53867 1.5708 0" />
+    <parent
+      link="3_Link" />
+    <child
+      link="3_2_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="2_2_Link">
+    <inertial>
+      <origin
+        xyz="0.0125186330308034 -5.04200847739611E-13 -0.124999999821934"
+        rpy="0 0 0" />
+      <mass
+        value="0.0914145398110059" />
+      <inertia
+        ixx="0.00028423216892371"
+        ixy="-1.48591409789596E-22"
+        ixz="4.01886948161982E-12"
+        iyy="0.000283022942887509"
+        iyz="-9.82526455079572E-18"
+        izz="2.2123440863941E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2_2"
+    type="continuous">
+    <origin
+      xyz="0.018233 0.084 -0.0385"
+      rpy="1.3472 1.5708 0" />
+    <parent
+      link="1_Link" />
+    <child
+      link="2_2_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="2_3_Link">
+    <inertial>
+      <origin
+        xyz="-0.0203586891646382 0.00618521687638097 0.0033303422412773"
+        rpy="0 0 0" />
+      <mass
+        value="0.186358445989438" />
+      <inertia
+        ixx="7.16227569215315E-05"
+        ixy="-1.92402998634006E-05"
+        ixz="-1.03596709723131E-05"
+        iyy="4.10839403569861E-05"
+        iyz="-1.96363699072597E-05"
+        izz="6.6975855090765E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2_3"
+    type="continuous">
+    <origin
+      xyz="-0.0285 0.055 0.0094224"
+      rpy="0.53842 1.5708 0" />
+    <parent
+      link="1_Link" />
+    <child
+      link="2_3_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="2_31_Link">
+    <inertial>
+      <origin
+        xyz="0.00200479286431724 -0.0530715120057212 -0.113447072779546"
+        rpy="0 0 0" />
+      <mass
+        value="0.193595537748519" />
+      <inertia
+        ixx="0.00108474078730181"
+        ixy="-6.7073073038382E-08"
+        ixz="-1.43272899017641E-07"
+        iyy="0.000889550434811994"
+        iyz="-0.000413994395468085"
+        izz="0.000198216160127084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_31_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly_hamster/meshes/2_31_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2_31"
+    type="continuous">
+    <origin
+      xyz="0 0.044023 0.023706"
+      rpy="1.2463 0 0" />
+    <parent
+      link="2_3_Link" />
+    <child
+      link="2_31_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
