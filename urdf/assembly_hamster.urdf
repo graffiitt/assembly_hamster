@@ -4,7 +4,9 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="assembly_hamster">
-  <link
+  <!-- base link -->
+  <link 
+ 
     name="base_link">
     <visual>
       <origin
@@ -30,6 +32,8 @@
       </geometry>
     </collision>
   </link>
+
+<!-- 1_link -->
   <link
     name="1_Link">
     <inertial>
@@ -74,7 +78,7 @@
     name="joint_1"
     type="continuous">
     <origin
-      xyz="0 0 0.0202"
+      xyz="0 0 0"
       rpy="1.5708 0 0" />
     <parent
       link="base_link" />
@@ -83,6 +87,10 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+
+<!-- 2_1_link -->
+
   <link
     name="2_1_Link">
     <inertial>
@@ -136,6 +144,9 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+
+  
   <link
     name="3_Link">
     <inertial>
