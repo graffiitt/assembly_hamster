@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'joint_1', 'joint_2_1', 'joint_3_1', 'joint_end_effector', 'joint_3_2', 'joint_2_2', 'joint_2_3', 'joint_2_31', ]
+controller_joint_names: ['', 'joint_1', 'joint_2_1', 'joint_3_1', 'joint_end_effector', 'joint_3_2', 'joint_2_2', 'joint_2_3', 'joint_2_31', 'joint_32_2']

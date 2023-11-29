@@ -30,6 +30,7 @@
       </geometry>
     </collision>
   </link>
+
   <link
     name="1_Link">
     <inertial>
@@ -70,6 +71,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_1"
     type="continuous">
@@ -83,6 +85,7 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
   <link
     name="2_1_Link">
     <inertial>
@@ -123,6 +126,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_2_1"
     type="continuous">
@@ -136,6 +140,7 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
   <link
     name="3_Link">
     <inertial>
@@ -176,6 +181,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_3_base"
     type="fixed">
@@ -187,8 +193,9 @@
     <child
       link="3_Link" />
     <axis
-      xyz="0 0 0" />
+      xyz="1 0 0" />
   </joint>
+
   <link
     name="3_1_Link">
     <inertial>
@@ -229,6 +236,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_3_1"
     type="continuous">
@@ -242,6 +250,7 @@
     <axis
       xyz="0 0 1" />
   </joint>
+
   <link
     name="last_Link">
     <inertial>
@@ -282,6 +291,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_last"
     type="fixed">
@@ -295,6 +305,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
   <link
     name="end_Link">
     <inertial>
@@ -335,12 +346,13 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_end_effector"
     type="continuous">
     <origin
       xyz="0 0.032 -0.045"
-      rpy="1.5708 0.021754 3.1416" />
+      rpy="1.5708 0 3.1416" />
     <parent
       link="last_Link" />
     <child
@@ -348,6 +360,7 @@
     <axis
       xyz="0 0 1" />
   </joint>
+
   <link
     name="3_2_Link">
     <inertial>
@@ -388,6 +401,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_3_2"
     type="continuous">
@@ -401,6 +415,7 @@
     <axis
       xyz="1 0 0" />
   </joint>
+
   <link
     name="2_2_Link">
     <inertial>
@@ -441,6 +456,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint_2_2"
     type="continuous">
@@ -454,6 +470,7 @@
     <axis
       xyz="1 0 0" />
   </joint>
+
   <link
     name="2_3_Link">
     <inertial>
@@ -507,6 +524,7 @@
     <axis
       xyz="1 0 0" />
   </joint>
+
   <link
     name="2_31_Link">
     <inertial>
@@ -547,9 +565,10 @@
       </geometry>
     </collision>
   </link>
+  
   <joint
     name="joint_2_31"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0.044023 0.023706"
       rpy="1.2463 0 0" />
@@ -558,6 +577,10 @@
     <child
       link="2_31_Link" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 0 0" />
   </joint>
+
+
+ 
+
 </robot>
