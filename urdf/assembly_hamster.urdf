@@ -304,6 +304,8 @@
       link="last_Link" />
     <axis
       xyz="1 0 0" />
+       <mimic joint="joint_3_1"  multiplier="-1" offset="0" />
+       
   </joint>
 
   <link
