@@ -1,9 +1,9 @@
 <launch>
   <arg
     name="model" />
-  <param
-    name="robot_description"
-    textfile="$(find assembly_hamster)/urdf/assembly_hamster.urdf" />
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find assembly_hamster)/urdf/assembly_hamster.xacro"/>
+
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"

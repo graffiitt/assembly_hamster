@@ -74,7 +74,7 @@
 
   <joint
     name="joint_1"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.0202"
       rpy="1.5708 0 0" />
@@ -84,6 +84,11 @@
       link="1_Link" />
     <axis
       xyz="0 1 0" />
+      <limit
+      lower="3"
+      upper="-3"
+      effort="1000.0"
+      velocity="0.1" />
   </joint>
 
   <link
@@ -129,7 +134,7 @@
 
   <joint
     name="joint_2_1"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.0285 0.055 0"
       rpy="1.5708 0 -1.5708" />
@@ -139,6 +144,11 @@
       link="2_1_Link" />
     <axis
       xyz="0 1 0" />
+      <limit
+      lower="1.5"
+      upper="-0.8"
+      effort="1000.0"
+      velocity="0.1" />
   </joint>
 
   <link
@@ -239,7 +249,7 @@
 
   <joint
     name="joint_3_1"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.048498 0.3244 0"
       rpy="0 0 1.8008" />
@@ -249,6 +259,11 @@
       link="3_1_Link" />
     <axis
       xyz="0 0 1" />
+      <limit
+      lower="1.3"
+      upper="-3"
+      effort="1000.0"
+      velocity="0.1" />
   </joint>
 
   <link
@@ -298,7 +313,7 @@ name="last_Link_2">
 
   <joint
     name="joint_last_2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0.25 -0.0005"
       rpy="3.14 -1.57 -1.5708"/>
@@ -309,11 +324,16 @@ name="last_Link_2">
     <axis
       xyz="1 0 0" />
        <mimic joint="joint_2_1"  multiplier="-1" offset="0" /> 
+  <limit
+      lower="3"
+      upper="-3"
+      effort="1000.0"
+      velocity="0.1" />
   </joint>
 
   <joint
     name="joint_last"
-    type="continuous">
+    type="revolute">
     <origin
        xyz="0 0 0"
       rpy="0 0 0"/>
@@ -324,13 +344,40 @@ name="last_Link_2">
     <axis
       xyz="1 0 0" />
        <mimic joint="joint_3_1"  multiplier="-1" offset="0" /> 
+  <limit
+      lower="3"
+      upper="-3"
+      effort="1000.0"
+      velocity="0.1" />
   </joint>
 
 
+ 
+<link
+name="end_link">
+</link>
 
+<joint
+    name="joint_gripper"
+    type="revolute">
+    <origin
+      xyz="0 0.032 -0.045"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="last_Link" />
+    <child
+      link="end_link" />
+    <axis
+      xyz="0 0 1" />
+      <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="1000.0" 
+      velocity="0.1" />
+  </joint>
 
   <link
-    name="end_Link">
+    name="gripper">
     <inertial>
       <origin
         xyz="5.86233622760363E-06 -0.000606087650654452 0.0417223441506261"
@@ -372,17 +419,21 @@ name="last_Link_2">
 
   <joint
     name="joint_end_effector"
-    type="continuous">
+    type="fixed">
     <origin
-      xyz="0 0.032 -0.045"
-      rpy="1.5708 0 3.1416" />
+      xyz="0 0 0"
+      rpy="0 0 0" />
     <parent
-      link="last_Link" />
+      link="end_link" />
     <child
-      link="end_Link" />
-    <axis
-      xyz="0 0 1" />
+      link="gripper" />
   </joint>
- 
 
+
+      <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/rrr_arm</robotNamespace>
+        </plugin>
+    </gazebo>
+    
 </robot>
